@@ -42,3 +42,24 @@ spring:
 jwt:
   issuer: lechae55@gmail.com
   secret_key: study-springboot
+
+# swagger 설정
+springdoc:
+  version: '@project.version@'
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    groups-order: DESC
+#    doc-expansion: none
+    tags-sorter: alpha
+    operations-sorter: method
+    disable-swagger-default-url: true
+    display-request-duration: true
+    oauth:
+      client-id: <<client-id>>
+      client-secret: <<client-secret>>
+      app-name: Google
+#    oauth2-redirect-url: /swagger-ui.html
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json

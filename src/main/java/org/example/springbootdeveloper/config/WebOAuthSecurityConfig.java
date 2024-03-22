@@ -39,7 +39,7 @@ public class WebOAuthSecurityConfig {
     public WebSecurityCustomizer configure() {
         return (web) -> web.ignoring()
                 .requestMatchers(toH2Console())
-                .requestMatchers("/img/**", "/css/**", "/js/**");
+                .requestMatchers("/img/**", "/css/**", "/js/**", "/swagger/**");
     }
 
     @Bean
@@ -61,6 +61,7 @@ public class WebOAuthSecurityConfig {
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/api/token").permitAll()
                         .requestMatchers("/api/**").authenticated()
+//                        .requestMatchers("/swagger-ui/**", "/v3/api-docs", "/v3/api-docs/**").authenticated()
                         .anyRequest().permitAll());
 
         http
