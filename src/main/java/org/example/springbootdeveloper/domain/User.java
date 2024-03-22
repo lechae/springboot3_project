@@ -26,17 +26,11 @@ public class User implements UserDetails {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "passwword")
+    @Column(name = "password")
     private String password;
 
     @Column(name = "nickname", unique = true)
     private String nickname;
-
-//    @Column(name = "created_at", nullable = false)
-//    private LocalDateTime createdAt;
-//
-//    @Column(name = "updated_at", nullable = false)
-//    private LocalDateTime updatedAt;
 
     @Builder
     public User(String email, String password, String auth, String nickname) {

@@ -41,10 +41,13 @@ public class Article {
         this.author = author;
         this.title = title;
         this.content = content;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     public void update(String title, String content) {
         this.title = title;
         this.content = content;
+        this.updatedAt = LocalDateTime.now();
     }
 }

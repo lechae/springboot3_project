@@ -62,6 +62,6 @@ public class CookieUtil {
      * @param <T>
      */
     public static <T> T deserialize(Cookie cookie, Class<T> cls) {
-        return cls.cast(SerializationUtils.clone(Base64.getUrlDecoder().decode(cookie.getValue())));
+        return cls.cast(SerializationUtils.deserialize(Base64.getUrlDecoder().decode(cookie.getValue())));
     }
 }
